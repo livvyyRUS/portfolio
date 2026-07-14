@@ -1,0 +1,186 @@
+
+/* Global Reset and Base Styles */
+:root {
+    --primary-color: #007BFF; /* Синий акцентный цвет */
+    --secondary-bg: #f8f9fa; /* Светлый фон секций */
+    --text-dark: #343a40; /* Темный текст */
+    --font-main: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #ffffff;
+    scroll-behavior: smooth; /* Плавный скроллинг при клике на ссылки */
+}
+
+/* --- Layout and Containers --- */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Header and Navigation --- */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-name a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Hero Section (Введение) --- */
+#hero {
+    background-color: var(--secondary-bg);
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+#hero p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #5a6268;
+}
+
+/* --- Skills Section (Навыки) --- */
+#skills h2, #education h2, #projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    color: var(--primary-color);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.skill-tag, .education-item, .project-card {
+    background: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(25% - 40px); /* По умолчанию 4 колонки */
+    min-width: 200px; /* Минимум ширины для небольших экранов */
+}
+
+/* Адаптивность для навыков */
+@media (max-width: 768px) {
+    .skill-tag, .education-item, .project-card {
+        flex: 1 1 calc(50% - 40px); /* По умолчанию 2 колонки на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-tag, .education-item, .project-card {
+        flex: 1 1 100%; /* Одна колонка на мобильных */
+    }
+}
+
+
+/* --- Education Section (Образование) --- */
+.education-item h4 {
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+/* --- Projects Section (Проекты) --- */
+.project-card {
+    text-align: left;
+    border-left: 3px solid var(--primary-color);
+    transition: box-shadow 0.3s;
+}
+
+.project-card h3 a {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #28a745; /* Цвет для ссылок проектов */
+    text-decoration: none;
+}
+
+.project-card p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* --- Contact Section (Контакты) --- */
+#contacts {
+    text-align: center;
+    background-color: var(--secondary-bg);
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 2em;
+    color: #343a40;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--text-dark);
+    color: #adb5bd;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
